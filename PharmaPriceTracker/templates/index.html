@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="m-2">
+    <h4>PharmaPrices</h4>
+</div>
+
+<div class="m-2">
+    <a class="btn btn-light" href="{% url 'PharmaPrices_Company_list' %}">Company Listing</a>
+</div>
+<div class="m-2">
+    <a class="btn btn-light" href="{% url 'PharmaPrices_Drug_list' %}">Drug Listing</a>
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'PharmaPrices_Drug_list' %}">
+    Drug Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>name</td><td>{{ object.name }}</td></tr>
+    <tr><td>created</td><td>{{ object.created }}</td></tr>
+    <tr><td>description</td><td>{{ object.description }}</td></tr>
+    <tr><td>last_updated</td><td>{{ object.last_updated }}</td></tr>
+    <tr><td>website</td><td>{{ object.website }}</td></tr>
+    <tr><td>company</td><td>{{ object.company }}</td></tr>
+</table>
+
+<h2>Data Points</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for datapoint in datapoints %}
+        <tr>
+            <td>{{ datapoint.date }}</td>
+            <td>{{ datapoint.price }} {{ datapoint.unit }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="2">No data points available.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock %}

@@ -1,0 +1,27 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'PharmaPrices_DataPoint_list' %}">
+    DataPoint Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>price</td><td>{{ object.price }}</td></tr>
+    <tr><td>last_updated</td><td>{{ object.last_updated }}</td></tr>
+    <tr><td>date</td><td>{{ object.date }}</td></tr>
+    <tr><td>created</td><td>{{ object.created }}</td></tr>
+    <tr><td>drug</td><td>{{ object.drug }}</td></tr>
+</table>
+
+
+
+
+
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+
+{% endblock %}
